@@ -1,20 +1,27 @@
-const ancestor = {
-  name: "Paul",
-  age: 83,
-  surname: "Dawson",
-  heritage: "Irish",
-};
+class Car {
+  
+  constructor({ brand, model, price }) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
 
-const parent = Object.create(ancestor);
-parent.name = "Stacey";
-parent.surname = "Moore";
-parent.age = 54;
+	getPrice() {
+    return this.price
+  }
+  
+  changePrice(newPrice){
+    this.price = newPrice
+    this.lens = newPrice
+  }
 
-const child = Object.create(parent);
-child.name = "Jason";
-child.age = 27;
+}
 
-console.log(ancestor);
-console.log(parent);
-console.log(child.surname);
-console.log(child.heritage);
+const audi = new Car({
+  price: 10000
+});
+
+console.log(audi.getPrice());
+audi.changePrice(2000);
+console.log(audi.getPrice());
+console.log(audi);
